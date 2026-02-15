@@ -11,15 +11,15 @@ Displays top 5 recommended movies.
 1) clone repo
    -Ensure the models folder contains cosine_sim.pkl, movies.pkl, and indices.pkl.
 3) create virtual envi
-   python -m venv venv
-4) activate virtual envi
-   venv\Scripts\activate
-5) install dependencies
-   pip install -r requirements.txt
-6) run flask app
-   cd app
-   python app.py
-7) open in browser
+   `python -m venv venv`
+5) activate virtual envi
+   `venv\Scripts\activate`
+6) install dependencies
+   `pip install -r requirements.txt`
+7) run flask app
+   `cd app
+   python app.py`
+8) open in browser
 
 ## future improvements
 Implement user ratings to further personalize recommendations.
