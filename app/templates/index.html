@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommender</title>
+    <style>
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+        }
+        select {
+            width: 310px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommender</h1>
+
+    <form method="POST">
+        <!-- Dropdown menu -->
+        <select name="movie" id="movieDropdown" required>
+            <option value="" disabled selected>Select a movie</option>
+            {% for movie in all_movies %}
+                <option value="{{ movie }}"
+                    {% if selected_movie == movie %}selected{% endif %}>
+                    {{ movie }}
+                </option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <!-- Search input with autocomplete -->
+        <input list="movies" id="movieInput" name="movie" placeholder="Type to search movie">
+        <datalist id="movies">
+            {% for movie in all_movies %}
+                <option value="{{ movie }}">
+            {% endfor %}
+        </datalist>
+
+        <br>
+        <button type="submit">Recommend</button>
+    </form>
+
+    {% if recommendations %}
+        <h2>Recommendations:</h2>
+        <ul>
+            {% for movie in recommendations %}
+                <li>{{ movie }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+</body>
+</html>
