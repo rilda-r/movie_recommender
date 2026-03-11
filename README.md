@@ -17,8 +17,8 @@ Displays top 5 recommended movies.
 6) install dependencies
    `pip install -r requirements.txt`
 7) run flask app
-   `cd app
-   python app.py`
+   `cd app`
+  `python app.py`
 8) open in browser
 
 ## future improvements
